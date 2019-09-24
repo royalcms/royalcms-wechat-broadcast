@@ -21,7 +21,7 @@ class BroadcastServiceProvider extends ServiceProvider
     {
         $wechat = $this->royalcms['wechat'];
         
-        $wechat->bindShared('broadcast', function($wechat)
+        $wechat->singleton('broadcast', function($wechat)
         {
             return new Broadcast($wechat['access_token']);
         });
